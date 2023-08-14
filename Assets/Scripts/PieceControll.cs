@@ -6,14 +6,15 @@ public class PieceControll : MonoBehaviour
 {
     public int type = 0;
     private GridBoard board;
-
+    private Score score;
     
     private BoxCollider2D coll;
     // Start is called before the first frame update
     void Start()
     {
         coll=GetComponent<BoxCollider2D>();
-        board=GameObject.Find("Grid").GetComponent<GridBoard>();    
+        board=GameObject.Find("Grid").GetComponent<GridBoard>(); 
+        score=board.GetComponent<Score>();
     }
 
     private void OnMouseDown()
@@ -25,7 +26,7 @@ public class PieceControll : MonoBehaviour
             if (type == 0)
             {
                 Debug.Log("Wrong");
-
+                score.UpdateScore(-1);
             }
             else
             {
@@ -33,7 +34,7 @@ public class PieceControll : MonoBehaviour
                 Debug.Log("Correct");
 
                 board.isCorrect = true;
-
+                score.UpdateScore(1);
             }
 
             

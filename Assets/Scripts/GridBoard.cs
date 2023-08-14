@@ -20,17 +20,36 @@ public class GridBoard : MonoBehaviour
     public bool isClicked;
     public bool isCorrect;
     public bool boardIsLoading;
+    
+
+    List<GameObject> oButtons = new List<GameObject>();
+    List<Sprite> LeftSprites = new List<Sprite>();
+    List<Sprite> Sprites = new List<Sprite>();
+
     private void Awake()
     {
+        StartGame(xDim,yDim);
+    }
+    public void StartGame(int xDim,int yDim)
+    {
+       
         isClicked = false;
         isCorrect = false;
-        boardIsLoading = false;
-        buttonList=new List<GameObject>();
+        boardIsLoading = true;
 
+        buttonList = new List<GameObject>();
+        GenerateBoard(xDim, yDim);
+
+        InvokeFilling(3f);
+    }
+    public void GenerateBoard(int X,int Y)
+    {
+       
+        xDim= X; yDim = Y; 
         for (int x = 0; x < xDim; x++)
         {
             for (int y = 0; y < yDim; y++)
-            {
+            {   
                 Instantiate(background, GetWorldPosition(x, y), Quaternion.identity);
             }
         }
@@ -46,15 +65,12 @@ public class GridBoard : MonoBehaviour
 
             }
         }
-        //InvokeRepeating(nameof(Call), 1, 7);
-
-        InvokeFilling();
+        
     }
-    
-    public void InvokeFilling()
+    public void InvokeFilling(float time)
     {
 
-        Invoke(nameof(StartFilling), 1);
+        Invoke(nameof(StartFilling), time);
 
     }
     void StartFilling()
@@ -84,33 +100,46 @@ public class GridBoard : MonoBehaviour
     void PiecesSpriteSet(int rand)//oyun objelere random sprite ata bir 
     {
         currentButton = buttonList[rand];
-
+        
         for (int i = 0; i < buttonList.Count; i++)
         {
+            
             if (i == rand)
             {
                 currentButton.GetComponent<SpriteRenderer>().sprite = sprites[rand];
                 currentButton.GetComponent<PieceControll>().type = 1;
-                continue;
+                
             }
             else
             {
-                int randSprite = Random.Range(0, sprites.Length);
-                if (randSprite == rand) { continue; } else
-                {
-                    
-                    otherButtons = buttonList[i];
-                    otherButtons.GetComponent<SpriteRenderer>().sprite = sprites[randSprite];
-                }
-                
+                otherButtons = buttonList[i];
+                oButtons.Add(otherButtons);
 
             }
 
+            
         }
+
+        for (int j = 0; j < sprites.Length; j++)
+        {
+            if (j != rand)
+            {
+                LeftSprites.Add(sprites[j]);
+            }
+        }
+
+        for (int y = 0; y < oButtons.Count; y++)
+        {
+            int randSprite = Random.Range(0, LeftSprites.Count);
+            oButtons[y].GetComponent<SpriteRenderer>().sprite = LeftSprites[randSprite];
+
+        }
+
         AfterClick();
 
     }
-    void PiecesSpriteSetEmpty()
+
+    public void PiecesSpriteSetEmpty()
     {
         boardIsLoading = true;
         for (int i = 0; i < buttonList.Count; i++)
@@ -125,11 +154,13 @@ public class GridBoard : MonoBehaviour
     void ReFill()
     {
         currentButton.GetComponent<PieceControll>().type = 0;
-        InvokeFilling();
+        InvokeFilling(1);
 
     }
     void AfterClick()
     {
+        LeftSprites.Clear();
+        oButtons.Clear();
         for (int i = 0; i < buttonList.Count; i++)
         {
 
@@ -145,5 +176,6 @@ public class GridBoard : MonoBehaviour
     {
         return new Vector3(xDim / 2 - X, Y - yDim / 2.0f, 0);
     }
+    
 
 }
