@@ -20,9 +20,11 @@ public class GridBoard : MonoBehaviour
     public bool isClicked;
     public bool isCorrect;
     public bool boardIsLoading;
-    
+    private bool isFilled;
+    // first Starting Game by StartGame and Generating board
+    // 
 
-    List<GameObject> oButtons = new List<GameObject>();
+    List<GameObject> wrongButtons = new List<GameObject>();
     List<Sprite> LeftSprites = new List<Sprite>();
     List<Sprite> Sprites = new List<Sprite>();
 
@@ -32,7 +34,7 @@ public class GridBoard : MonoBehaviour
     }
     public void StartGame(int xDim,int yDim)
     {
-       
+        isFilled = false;
         isClicked = false;
         isCorrect = false;
         boardIsLoading = true;
@@ -84,7 +86,6 @@ public class GridBoard : MonoBehaviour
         int rand = Random.Range(0, buttonList.Count);
         SetReffenceObject(rand);
         
-        
         yield return new WaitUntil(()=>isClicked);
         PiecesSpriteSetEmpty();
         
@@ -113,7 +114,7 @@ public class GridBoard : MonoBehaviour
             else
             {
                 otherButtons = buttonList[i];
-                oButtons.Add(otherButtons);
+                wrongButtons.Add(otherButtons);
 
             }
 
@@ -128,15 +129,23 @@ public class GridBoard : MonoBehaviour
             }
         }
 
-        for (int y = 0; y < oButtons.Count; y++)
+        StartCoroutine(AddSprites(0.01f));
+
+       
+
+    }
+    IEnumerator AddSprites(float wait)
+    {
+        isFilled = false;
+        for (int y = 0; y < wrongButtons.Count; y++)
         {
             int randSprite = Random.Range(0, LeftSprites.Count);
-            oButtons[y].GetComponent<SpriteRenderer>().sprite = LeftSprites[randSprite];
-
+            wrongButtons[y].GetComponent<SpriteRenderer>().sprite = LeftSprites[randSprite];
+            yield return new WaitForSeconds(wait);
         }
-
+        isFilled = true;
+        yield return new WaitUntil(() => isFilled);
         AfterClick();
-
     }
 
     public void PiecesSpriteSetEmpty()
@@ -160,7 +169,7 @@ public class GridBoard : MonoBehaviour
     void AfterClick()
     {
         LeftSprites.Clear();
-        oButtons.Clear();
+        wrongButtons.Clear();
         for (int i = 0; i < buttonList.Count; i++)
         {
 

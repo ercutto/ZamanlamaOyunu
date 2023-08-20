@@ -123,6 +123,86 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &352726181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 352726183}
+  - component: {fileID: 352726182}
+  - component: {fileID: 352726185}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &352726182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352726181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e709cc7fbb09d47bee2bc78462b5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referenceObject: {fileID: 1900888311}
+  SpritesList:
+  - {fileID: 1524952670, guid: 179b34c092e50544880cf7ca258ebd12, type: 3}
+  - {fileID: -2076140395, guid: 179b34c092e50544880cf7ca258ebd12, type: 3}
+  - {fileID: -681359482, guid: 179b34c092e50544880cf7ca258ebd12, type: 3}
+  - {fileID: -1901042509, guid: 179b34c092e50544880cf7ca258ebd12, type: 3}
+  - {fileID: -97187988, guid: 179b34c092e50544880cf7ca258ebd12, type: 3}
+  - {fileID: -831461723, guid: 179b34c092e50544880cf7ca258ebd12, type: 3}
+  - {fileID: 415617544, guid: 179b34c092e50544880cf7ca258ebd12, type: 3}
+  - {fileID: 18794693, guid: 179b34c092e50544880cf7ca258ebd12, type: 3}
+  - {fileID: -489274660, guid: 179b34c092e50544880cf7ca258ebd12, type: 3}
+  background: {fileID: 1233074465042932681, guid: 4fd20cb850c661840a019fbc3d4b2f10, type: 3}
+  emptyButton: {fileID: 2956265606507731658, guid: 959cfe0c445c01d4488286035f282144, type: 3}
+  xDim: 4
+  yDim: 2
+  gridboardGenerated: 0
+  buttonsAreAdded: 0
+  correctMatchSelected: 0
+  spritesAreAdded: 0
+--- !u!4 &352726183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352726181}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &352726185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352726181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85fa9437a39ae0489c8f26ff89de45b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridBoard: {fileID: 453093554}
+  scoreText: {fileID: 1729780000}
+  _score: 0
+  _Level: 0
 --- !u!1 &453093553
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,14 +213,13 @@ GameObject:
   m_Component:
   - component: {fileID: 453093555}
   - component: {fileID: 453093554}
-  - component: {fileID: 453093556}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &453093554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,22 +266,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &453093556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453093553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f85fa9437a39ae0489c8f26ff89de45b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gridBoard: {fileID: 453093554}
-  scoreText: {fileID: 1729780000}
-  _score: 0
-  _Level: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
