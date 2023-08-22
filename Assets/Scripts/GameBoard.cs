@@ -25,7 +25,9 @@ public class GameBoard : MonoBehaviour
     public bool buttonsAreAdded;
     public bool correctMatchSelected;
     public bool spritesAreAdded;
+    public bool showReference;
     public bool colorOrAnimActionComplated;
+    public bool nextLevel;
     private void Awake()
     {
         gridBoard = new List<GameObject>();
@@ -36,18 +38,42 @@ public class GameBoard : MonoBehaviour
     }
     private void Start()
     {
-        StartCoroutine(BuildGame());
+        
+        StartGame(xDim, yDim);
+    }
+    public void StartGame(int xDim, int yDim)
+    {
+        for (int i = 0; i < gridBoard.Count; i++)
+        {
+            Destroy(gridBoard[i]);
+            gridBoard.RemoveAt(i);
+        }
+        for (int i = 0; i < wrongbuttonsList.Count; i++)
+        {
+            Destroy(wrongbuttonsList[i]);
+            wrongbuttonsList.RemoveAt(i);
+        }
+        gridBoard.Clear();
+        wrongSpritesList.Clear();
+        wrongbuttonsList.Clear();
+        correctButton = null;
+        correctSprite = null;
+        gridBoard = new List<GameObject>();
+        buttons = new List<GameObject>();
+        wrongbuttonsList = new List<GameObject>();
+        wrongSpritesList = new List<Sprite>();
 
+        StartCoroutine(BuildGame(xDim, yDim));
     }
 
-    IEnumerator BuildGame()
+    IEnumerator BuildGame(int xDim,int yDim)
     {
         StartCoroutine(GenerateGridBackGround(xDim, yDim));
         yield return new WaitUntil(() => gridboardGenerated);
         StartCoroutine(AddButtonToBoard());
         yield return new WaitUntil(() => buttonsAreAdded);
         int choseCorrect = Random.Range(0, SpritesList.Count);
-        StartCoroutine(SelectCorrects(choseCorrect));
+        StartCoroutine(SelectCorrects());
         yield return new WaitUntil(() => correctMatchSelected);
         StartCoroutine(AddSprites());
         StartCoroutine(ShowReferenceOBject());
@@ -80,54 +106,72 @@ public class GameBoard : MonoBehaviour
     {
         buttonsAreAdded = false;
 
-        for (int x = 0; x < xDim; x++)
+        for (int i = 0; i < gridBoard.Count; i++)
         {
-
-            for (int y = 0; y < yDim; y++)
-            {
-                GameObject empty = Instantiate(emptyButton, GetWorldPosition(x, y), Quaternion.identity);
-                empty.GetComponent<BoxCollider2D>().enabled = false;
-                buttons.Add(empty);
-                yield return new WaitForSeconds(0.01f);
-
-            }
+            GameObject empty = Instantiate(emptyButton, new Vector3(gridBoard[i].transform.position.x, gridBoard[i].transform.position.y,0), Quaternion.identity);
+            empty.GetComponent<BoxCollider2D>().enabled = false;
+            empty.transform.parent = gridBoard[i].transform;
+            buttons.Add(empty);
+            yield return new WaitForSeconds(0.01f);
         }
 
         buttonsAreAdded = true;
     }
 
-    IEnumerator SelectCorrects(int correct)
+    IEnumerator SelectCorrects()
     {
+        wrongbuttonsList.Clear();
         correctMatchSelected = false;
-        for (int x = 0; x < buttons.Count; x++)
+        int rand=Random.Range(0, buttons.Count);
+        for (int i = 0; i < buttons.Count; i++)
         {
-            if (x == correct)
+            if (i == rand)
             {
-                correctButton = buttons[x];
+                correctButton = buttons[i];
                 correctButton.GetComponent<BoxCollider2D>().enabled = false;
-               
-            }
-            else
-            {
-                wrongButton = buttons[x];
-                wrongButton.GetComponent<BoxCollider2D>().enabled = false;
-                wrongButton.GetComponent<PieceControll>().type = 0;
-                wrongbuttonsList.Add(wrongButton);
-            }
-        }
-        for (int x = 0; x < SpritesList.Count; x++)
-        {
-            if (x == correct)
-            {
-                correctSprite = SpritesList[x];
+                correctButton.GetComponent<PieceControll>().type = 1;
                 
             }
             else
             {
-                Sprite wrongSprite = SpritesList[x];
-                wrongSpritesList.Add(wrongSprite);
+                wrongButton = buttons[i];
+                wrongButton.GetComponent<BoxCollider2D>().enabled = false;
+                wrongButton.GetComponent<PieceControll>().type = 0;
+                wrongbuttonsList.Add(wrongButton);
             }
+
+            wrongbuttonsList.Add(buttons[i]);
         }
+
+        //for (int x = 0; x < buttons.Count; x++)
+        //{
+        //    if (x == correct)
+        //    {
+        //        correctButton = buttons[x];
+        //        correctButton.GetComponent<BoxCollider2D>().enabled = false;
+               
+        //    }
+        //    else
+        //    {
+        //        wrongButton = buttons[x];
+        //        wrongButton.GetComponent<BoxCollider2D>().enabled = false;
+        //        wrongButton.GetComponent<PieceControll>().type = 0;
+        //        wrongbuttonsList.Add(wrongButton);
+        //    }
+        //}
+        //for (int x = 0; x < SpritesList.Count; x++)
+        //{
+        //    if (x == correct)
+        //    {
+        //        correctSprite = SpritesList[x];
+                
+        //    }
+        //    else
+        //    {
+        //        Sprite wrongSprite = SpritesList[x];
+        //        wrongSpritesList.Add(wrongSprite);
+        //    }
+        //}
 
         yield return new WaitForSeconds(0.01f);
         correctMatchSelected = true;
@@ -136,11 +180,31 @@ public class GameBoard : MonoBehaviour
     IEnumerator AddSprites()
     {
         spritesAreAdded= false;
-        for (int x = 0; x < wrongbuttonsList.Count; x++)
+        wrongSpritesList.Clear();
+        int randCorrect = Random.Range(0, SpritesList.Count);
+        correctSprite= SpritesList[randCorrect];
+        for (int i = 0; i < SpritesList.Count; i++)
         {
-            
+            if (i != randCorrect)
+            {
+                wrongSpritesList.Add(SpritesList[i]);
+            }
+
+        }
+
+        for (int x = 0; x < buttons.Count; x++)
+        {
             int rand = Random.Range(0, wrongSpritesList.Count);
-            wrongbuttonsList[x].GetComponent<SpriteRenderer>().sprite = wrongSpritesList[rand];
+
+            if (buttons[x].GetComponent<PieceControll>().type==1) {
+                buttons[x].GetComponent<SpriteRenderer>().sprite = correctSprite;
+
+            }
+            else
+            {
+                buttons[x].GetComponent<SpriteRenderer>().sprite = wrongSpritesList[rand];
+            }
+
             yield return new WaitForSeconds(0.01f);
         }
         
@@ -158,13 +222,9 @@ public class GameBoard : MonoBehaviour
             referenceObject.GetComponent<SpriteRenderer>().sprite = randSprite;
             yield return new WaitForSeconds(0.01f);
         }
-        if (correctSprite != null)
-        {
-            referenceObject.GetComponent<SpriteRenderer>().sprite = correctSprite;
-            correctButton.GetComponent<PieceControll>().type = 1;
-            correctButton.GetComponent<SpriteRenderer>().sprite = correctSprite;
-        }
-
+        
+        referenceObject.GetComponent<SpriteRenderer>().sprite = correctSprite;
+            
 
     }
 
@@ -183,16 +243,19 @@ public class GameBoard : MonoBehaviour
         StartCoroutine(ChangeSpriteColorOrAnimation(Color.white));
         yield return new WaitUntil(() => colorOrAnimActionComplated);
         wrongbuttonsList.Clear();
-        wrongSpritesList.Clear();
+        
         int choseCorrect = Random.Range(0, SpritesList.Count);
-        StartCoroutine(SelectCorrects(choseCorrect));
+        StartCoroutine(SelectCorrects());
         yield return new WaitUntil(() => correctMatchSelected);
         StartCoroutine(AddSprites());
         StartCoroutine(ShowReferenceOBject());
         yield return new WaitUntil(() => spritesAreAdded);
+        //wrongButton.GetComponent<BoxCollider2D>().enabled = true;
+        if (correctButton !=null)
+        {
+            correctButton.GetComponent<BoxCollider2D>().enabled = true;
+        }
         
-        wrongButton.GetComponent<BoxCollider2D>().enabled = true;
-        correctButton.GetComponent<BoxCollider2D>().enabled = true;
         for (int i = 0; i < wrongbuttonsList.Count; i++)
         {
             wrongbuttonsList[i].GetComponent<BoxCollider2D>().enabled = true;
@@ -211,6 +274,7 @@ public class GameBoard : MonoBehaviour
         colorOrAnimActionComplated = true;
 
     }
+    
 
 
 }

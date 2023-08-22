@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public GridBoard gridBoard;
+    public GameBoard gameBoard;
     public Text scoreText;
     public  int _score=0;
     public int _Level;
-    private  int _maxExprience = 10;
-    int _yDim = 1;
+    private  int _maxExprience = 5;
+    int _yDim = 2;
     int _xDim = 2;
     private int _exprience;
     
@@ -21,12 +21,12 @@ public class Score : MonoBehaviour
 
         if(_exprience >= _maxExprience)
         {
-            gridBoard.isCorrect = true;
+           
             _Level++;
 
             _exprience = 0;
-            //gridBoard.StartGame(_xDim+_Level,_yDim);
-            //gridBoard.StartCoroutine("Fill");
+            gameBoard.StartGame(_xDim+_Level,_yDim+_Level);
+            
         }
 
         scoreText.text = _score.ToString();
