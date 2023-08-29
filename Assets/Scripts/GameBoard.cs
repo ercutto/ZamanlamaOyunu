@@ -1,7 +1,6 @@
 
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameBoard : MonoBehaviour
@@ -19,8 +18,9 @@ public class GameBoard : MonoBehaviour
     private List<GameObject> wrongbuttonsList;
     private GameObject correctButton=null;
     private List<GameObject> gridBoard;
-    public int xDim;
-    public int yDim;
+    public Score _score;
+    public int _xDim;
+    public int _yDim;
     public bool gridboardGenerated;
     public bool buttonsAreAdded;
     public bool correctMatchSelected;
@@ -39,20 +39,20 @@ public class GameBoard : MonoBehaviour
     private void Start()
     {
         
-        StartGame(xDim, yDim);
+        StartGame(_xDim, _yDim);
     }
     public void StartGame(int xDim, int yDim)
     {
         for (int i = 0; i < gridBoard.Count; i++)
         {
             Destroy(gridBoard[i]);
-            gridBoard.RemoveAt(i);
+            //gridBoard.RemoveAt(i);
         }
-        for (int i = 0; i < wrongbuttonsList.Count; i++)
-        {
-            Destroy(wrongbuttonsList[i]);
-            wrongbuttonsList.RemoveAt(i);
-        }
+        //for (int i = 0; i < wrongbuttonsList.Count; i++)
+        //{
+        //    Destroy(wrongbuttonsList[i]);
+        //    wrongbuttonsList.RemoveAt(i);
+        //}
         gridBoard.Clear();
         wrongSpritesList.Clear();
         wrongbuttonsList.Clear();
@@ -68,7 +68,9 @@ public class GameBoard : MonoBehaviour
 
     IEnumerator BuildGame(int xDim,int yDim)
     {
-        StartCoroutine(GenerateGridBackGround(xDim, yDim));
+        _xDim = xDim;
+        _yDim = yDim;
+        StartCoroutine(GenerateGridBackGround(_xDim, _yDim));
         yield return new WaitUntil(() => gridboardGenerated);
         StartCoroutine(AddButtonToBoard());
         yield return new WaitUntil(() => buttonsAreAdded);
@@ -83,13 +85,15 @@ public class GameBoard : MonoBehaviour
         for(int i = 0; i < wrongbuttonsList.Count; i++) {
             wrongbuttonsList[i].GetComponent<BoxCollider2D>().enabled = true;
         }
+
+        //StartCoroutine(PlayerCouldntFind());
     }
-    IEnumerator GenerateGridBackGround(int xDim, int yDim)
+    IEnumerator GenerateGridBackGround(int newxDim, int newyDim)
     {
         gridboardGenerated = false;
-        for (int x = 0; x < xDim; x++)
+        for (int x = 0; x < newxDim; x++)
         {
-            for (int y = 0; y < yDim; y++)
+            for (int y = 0; y < newyDim; y++)
             {
                 GameObject bg = Instantiate(background, GetWorldPosition(x, y), Quaternion.identity);
                 gridBoard.Add(bg);
@@ -142,36 +146,6 @@ public class GameBoard : MonoBehaviour
 
             wrongbuttonsList.Add(buttons[i]);
         }
-
-        //for (int x = 0; x < buttons.Count; x++)
-        //{
-        //    if (x == correct)
-        //    {
-        //        correctButton = buttons[x];
-        //        correctButton.GetComponent<BoxCollider2D>().enabled = false;
-               
-        //    }
-        //    else
-        //    {
-        //        wrongButton = buttons[x];
-        //        wrongButton.GetComponent<BoxCollider2D>().enabled = false;
-        //        wrongButton.GetComponent<PieceControll>().type = 0;
-        //        wrongbuttonsList.Add(wrongButton);
-        //    }
-        //}
-        //for (int x = 0; x < SpritesList.Count; x++)
-        //{
-        //    if (x == correct)
-        //    {
-        //        correctSprite = SpritesList[x];
-                
-        //    }
-        //    else
-        //    {
-        //        Sprite wrongSprite = SpritesList[x];
-        //        wrongSpritesList.Add(wrongSprite);
-        //    }
-        //}
 
         yield return new WaitForSeconds(0.01f);
         correctMatchSelected = true;
@@ -230,7 +204,11 @@ public class GameBoard : MonoBehaviour
 
     Vector3 GetWorldPosition(int X, int Y)
     {
-        return new Vector3(xDim / 2 - X, Y - yDim / 2.0f, 0);
+        int x = X * 2;
+        int y=Y*2;
+        int ycor = -3;
+        //return new Vector3(xDim / 2f - X, Y - yDim / 2f, 0);
+        return new Vector3(-_xDim+1f +x, ycor+_yDim-y-1f,0);
     }
     public void Clicked()
     {   
@@ -260,6 +238,9 @@ public class GameBoard : MonoBehaviour
         {
             wrongbuttonsList[i].GetComponent<BoxCollider2D>().enabled = true;
         }
+
+        //StartCoroutine(PlayerCouldntFind());
+
     }
 
     IEnumerator ChangeSpriteColorOrAnimation(Color _color)
@@ -267,14 +248,29 @@ public class GameBoard : MonoBehaviour
         colorOrAnimActionComplated = false;
         for (int i = 0; i < wrongbuttonsList.Count; i++)
         {
-            wrongbuttonsList[i].GetComponent<SpriteRenderer>().color= _color;
+           
+            if (wrongbuttonsList[i].GetComponent<PieceControll>().type == 1) { 
+                wrongbuttonsList[i].GetComponent<SpriteRenderer>().color = Color.green;
+                }
+            else
+            {
+                wrongbuttonsList[i].GetComponent<SpriteRenderer>().color = _color;
+            }
             
-            yield return new WaitForSeconds(0.1f);
+            
+            yield return new WaitForSeconds(0.01f);
+            wrongbuttonsList[i].GetComponent<SpriteRenderer>().color = Color.white;
         }
         colorOrAnimActionComplated = true;
 
     }
-    
+    IEnumerator PlayerCouldntFind()
+    {
+       
+        yield return new WaitForSeconds(3f);
+        //_score.UpdateScore(-1);
+        
+    }
 
 
 }
