@@ -43,6 +43,7 @@ public class GameBoard : MonoBehaviour
     }
     public void StartGame(int xDim, int yDim)
     {
+        
         for (int i = 0; i < gridBoard.Count; i++)
         {
             Destroy(gridBoard[i]);
@@ -70,6 +71,7 @@ public class GameBoard : MonoBehaviour
     {
         _xDim = xDim;
         _yDim = yDim;
+        yield return new WaitForSeconds(1);
         StartCoroutine(GenerateGridBackGround(_xDim, _yDim));
         yield return new WaitUntil(() => gridboardGenerated);
         StartCoroutine(AddButtonToBoard());
