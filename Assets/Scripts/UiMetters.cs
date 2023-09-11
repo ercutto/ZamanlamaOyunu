@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,21 +10,31 @@ public class UiMetters : MonoBehaviour
     public Slider CorrectCountSlider;
     public Slider CountDownSlider;
     public Score _score;
+    public GameBoard _board;
+    public TimingGameManager _timingGameManager;
     
     public bool changeApplied=true;
-    private bool Win;
+    public bool Win;
+    public bool paused=false;
+    bool scoreDecreesed=false;
+    private float sliderMin =0.1f;
+    
     // Start is called before the first frame update
     void Start()
     {
+        ResetVar();
+
+    }
+    public void ResetVar()
+    {
         Win = false;
+        paused = false;
         changeApplied = true;
         SetFrontMax(100f);
         SetFront(0f);
         SetMaxBg(100);
         SetBackgroundSlider(5f);
-
     }
-
     void Update()
     {
         Checkhealth();
@@ -37,25 +48,50 @@ public class UiMetters : MonoBehaviour
         }
         else
         {
-            if (!changeApplied)
+            if (paused) { return; }
+            else
             {
-                Calculatescore();
+                if (!changeApplied)
+                {
+                    Calculatescore();
+                }
+
+                float distance = CountDownSlider.value - CorrectCountSlider.value;
+
+                if (_board.nextLevel == true && _board.reFilling == false)
+                {
+                    if (distance >= 0.1f)
+                    {
+
+                        CountDownSlider.value = Mathf.Lerp(CountDownSlider.value, CorrectCountSlider.value, 0.005f);
+
+                    }
+                    else if (distance <= 0.1f)
+                    {
+                        if (!scoreDecreesed)
+                        {
+                            StartCoroutine(CallAddScore());
+                        }
+                    }
+                }
+                
+
+               
+
             }
-
-            float distance = CountDownSlider.value - CorrectCountSlider.value;
-
-
-            if (distance >= 0.1f)
-            {
-
-                CountDownSlider.value = Mathf.Lerp(CountDownSlider.value, CorrectCountSlider.value, 0.005f);
-
-            }
-            else if (distance <= 0.1f) { AddScore(-5f); }
+            
         }
     }
 
+    IEnumerator CallAddScore()
+    {
+        AddScore(-5f);
+        scoreDecreesed = true;
 
+        yield return new WaitForSeconds(2);
+        scoreDecreesed=false;
+
+    }
     void Calculatescore()
     {
         changeApplied = false;
@@ -66,6 +102,7 @@ public class UiMetters : MonoBehaviour
         {
             CorrectCountSlider.value = 100f;
             Win = true;
+            _timingGameManager.RestartGame();
         }
         CountDownSlider.value = CorrectCountSlider.value + 10f;
         changeApplied = true;
@@ -88,13 +125,25 @@ public class UiMetters : MonoBehaviour
     {
         CountDownSlider.value = madeSomeChange;
     }
-    void AddScore(float addScore)
+    public void AddScore(float addScore)
     {
+        
         CorrectCountSlider.value += addScore;
+        if (CorrectCountSlider.value < sliderMin) { CorrectCountSlider.value = sliderMin; }
         _score.UpdateScore(-1);
 
     }
- 
+    public void DecreeseScore(float addScore)
+    {
+        
+        CorrectCountSlider.value += addScore;
+        if (CorrectCountSlider.value < sliderMin) { CorrectCountSlider.value = sliderMin; }
+       
+
+    }
+
+
+
 
 
 }

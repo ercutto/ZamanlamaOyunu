@@ -14,7 +14,7 @@ public class PieceControll : MonoBehaviour
     {
         coll=GetComponent<BoxCollider2D>();
         
-        gameBoard= GameObject.Find("GameObject").GetComponent<GameBoard>();
+        gameBoard= GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBoard>();
         
         score=gameBoard.GetComponent<Score>();
     }

@@ -8,6 +8,8 @@ public class GameBoard : MonoBehaviour
     public GameObject referenceObject;
     public List<Sprite> SpritesList;
 
+    public UiMetters metters;
+
     public GameObject background;
     public GameObject emptyButton;
     private GameObject wrongButton = null;
@@ -28,22 +30,30 @@ public class GameBoard : MonoBehaviour
     public bool showReference;
     public bool colorOrAnimActionComplated;
     public bool nextLevel;
+    public bool reFilling;
     private void Awake()
     {
+        
+
+    }
+    public void AwakeBoard()
+    {
+        reFilling = false;
+        nextLevel = false;
         gridBoard = new List<GameObject>();
         buttons = new List<GameObject>();
         wrongbuttonsList = new List<GameObject>();
-        wrongSpritesList= new List<Sprite>();
-
+        wrongSpritesList = new List<Sprite>();
+        
     }
-    private void Start()
+    public void StartBoard()
     {
         
         StartGame(_xDim, _yDim);
     }
     public void StartGame(int xDim, int yDim)
     {
-        
+        nextLevel = false;
         for (int i = 0; i < gridBoard.Count; i++)
         {
             Destroy(gridBoard[i]);
@@ -87,7 +97,7 @@ public class GameBoard : MonoBehaviour
         for(int i = 0; i < wrongbuttonsList.Count; i++) {
             wrongbuttonsList[i].GetComponent<BoxCollider2D>().enabled = true;
         }
-
+        nextLevel = true;
         //StartCoroutine(PlayerCouldntFind());
     }
     IEnumerator GenerateGridBackGround(int newxDim, int newyDim)
@@ -218,6 +228,7 @@ public class GameBoard : MonoBehaviour
     }
     IEnumerator Refill()
     {
+        reFilling=true;
         StartCoroutine(ChangeSpriteColorOrAnimation(Color.red));
         yield return new WaitUntil(()=>colorOrAnimActionComplated);
         StartCoroutine(ChangeSpriteColorOrAnimation(Color.white));
@@ -241,6 +252,8 @@ public class GameBoard : MonoBehaviour
             wrongbuttonsList[i].GetComponent<BoxCollider2D>().enabled = true;
         }
 
+        reFilling= false;
+       
         //StartCoroutine(PlayerCouldntFind());
 
     }
@@ -266,13 +279,21 @@ public class GameBoard : MonoBehaviour
         colorOrAnimActionComplated = true;
 
     }
-    IEnumerator PlayerCouldntFind()
+
+    public void ResetVar()
     {
-       
-        yield return new WaitForSeconds(3f);
-        //_score.UpdateScore(-1);
-        
+        metters.ResetVar();
+        _score.ResetVar();
+        _xDim = 2;
+        _yDim = 1;
+        Invoke(nameof(StartBoard), 1);
     }
 
-
+    public void Paused(bool falseOrTrue)
+    {
+        for (int i = 0; i < gridBoard.Count; i++)
+        {
+            gridBoard[i].transform.GetChild(0).GetComponent<BoxCollider2D>().enabled = falseOrTrue;
+        }
+    }
 }
