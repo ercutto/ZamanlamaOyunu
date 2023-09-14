@@ -1,0 +1,1086 @@
+fileFormatVersion: 2
+guid: 3fa04c822f52aac41b1d25103d04ae8d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fgtiles-alpha_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 368
+        height: 864
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ebf0575d7d7ef94b9ebac1485d26b99
+      internalID: 1581064137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_1
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1624
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21db3d829ae5c5547a1b1e94c2202ab2
+      internalID: 1209629036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_2
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 1376
+        width: 96
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad9063333432e44097e579c09a07dad
+      internalID: -431398128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_3
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1576
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 313c65293f318824291a196e41d89cd2
+      internalID: -998173190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_4
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1528
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ad636b5d1275c34eaf6f500e2605048
+      internalID: -1301504143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_5
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1480
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e917ef0709fa64b8dd0685c54dded8
+      internalID: -1925253907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_6
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1432
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcc29eb1526973840b45f63cad5dce0a
+      internalID: 1769357084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_7
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cea8444e27332294b8aa757ef5e397bd
+      internalID: 523624774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_8
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1338
+        width: 130
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c620c3212c58a23469282cd3b80667a8
+      internalID: -1804803333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_9
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 1296
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22f4eacb4ae8e8b43b61c760b01ad61e
+      internalID: 1462055482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_10
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1238
+        width: 136
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be0ccffcaf5956a4ca3c016706d8acde
+      internalID: -745020039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_11
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 1312
+        width: 55
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ae98486e4b2fd044af989cd5176e1ba
+      internalID: -1443743967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_12
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 1194
+        width: 130
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98d422fe0e13bb84a8ad0530fb7ab63f
+      internalID: 971592416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_13
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 1094
+        width: 136
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 554c601aad19f1a448f574a0d348acd8
+      internalID: 372290482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_14
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 980
+        width: 150
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 152838faef75fc349bc2fc90e471104c
+      internalID: -1978972568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_15
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 938
+        width: 130
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe0997fa729701944968a6696a47b9bf
+      internalID: -504893946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_16
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 768
+        width: 54
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d587caff7f12344d93911b241c90a29
+      internalID: -451464120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_17
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 838
+        width: 136
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71f1b26026e8ec248ac8c7e45ef91051
+      internalID: -1931588580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_18
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 762
+        width: 260
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a7bd7cbc10c21c4ba4cfee8963c6541
+      internalID: -1410104216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_19
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 794
+        width: 130
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70132b81b488c4345ad6c400b10a7dfa
+      internalID: -1839603990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_20
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 662
+        width: 272
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2dd95118ee2500488cbd9311b8a5963
+      internalID: -433082393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_21
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 704
+        width: 56
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e6b3b324a015344bbaa47e29548bf04
+      internalID: -1501300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_22
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 694
+        width: 136
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23612bf9eda26824687c9d9aaacaa223
+      internalID: -349128592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_23
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 633
+        width: 116
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af0cdc6ad6b729141bceaca7972d573e
+      internalID: 1311146627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_24
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 656
+        width: 37
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cfc9c73a5cef284c8a93cc436513954
+      internalID: 1004789485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_25
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 656
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 251830737fe48924da6747a98b4e8488
+      internalID: 798837180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_26
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 656
+        width: 37
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cd22022966d00c42980ebfd2afe9dd6
+      internalID: -965896967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_27
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 416
+        width: 196
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be9def634fc56da43aba3585cfdb3c1c
+      internalID: 1933266224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_28
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 576
+        width: 126
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1db3734388a9f144d8c5007825279850
+      internalID: -654142530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_29
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 624
+        width: 37
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac188fe2228d83d4a87b45e7de2702ce
+      internalID: 607920015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_30
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 624
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67ce2c4666eabcb449551c95d5c223f4
+      internalID: 1751085665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_31
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 571
+        width: 61
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5717bc29df715947bcd61e653308a4c
+      internalID: -1474130992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_32
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 568
+        width: 64
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e3f85851458fcc4485acf47ee90cf89
+      internalID: 1933728917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_33
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 584
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aca55bbe260a384fbf2a047e91f2858
+      internalID: 169212215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_34
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 528
+        width: 140
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6bf8500aec0ba549a3d9b983b4faf26
+      internalID: -759223073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_35
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 532
+        width: 60
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84c05e32695696e43bf74efe9dc59fd8
+      internalID: 1464402120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_36
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 288
+        width: 204
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c8ab29454ca2fc469b7f7d1b817fb42
+      internalID: 1089317194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_37
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 464
+        width: 108
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9df396dea451fbe4eab82a0b65f07544
+      internalID: 1361239839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_38
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 399
+        width: 64
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62c08b2450c0a1f4198c76e78c227ec4
+      internalID: -1916213970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 163
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2aea99e686ec44886a332f83c32974
+      internalID: 767728303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_40
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 292
+        width: 150
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6e4d4c56de123141819ae0ee5ed5dab
+      internalID: 1793333194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 480
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 359683d8fbfe9eb4c8810d103394318b
+      internalID: 455263911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fgtiles-alpha_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 480
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90439bbc302b3ec478f4fc274c922bf7
+      internalID: 837048545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      fgtiles-alpha_0: 1581064137
+      fgtiles-alpha_1: 1209629036
+      fgtiles-alpha_10: -745020039
+      fgtiles-alpha_11: -1443743967
+      fgtiles-alpha_12: 971592416
+      fgtiles-alpha_13: 372290482
+      fgtiles-alpha_14: -1978972568
+      fgtiles-alpha_15: -504893946
+      fgtiles-alpha_16: -451464120
+      fgtiles-alpha_17: -1931588580
+      fgtiles-alpha_18: -1410104216
+      fgtiles-alpha_19: -1839603990
+      fgtiles-alpha_2: -431398128
+      fgtiles-alpha_20: -433082393
+      fgtiles-alpha_21: -1501300030
+      fgtiles-alpha_22: -349128592
+      fgtiles-alpha_23: 1311146627
+      fgtiles-alpha_24: 1004789485
+      fgtiles-alpha_25: 798837180
+      fgtiles-alpha_26: -965896967
+      fgtiles-alpha_27: 1933266224
+      fgtiles-alpha_28: -654142530
+      fgtiles-alpha_29: 607920015
+      fgtiles-alpha_3: -998173190
+      fgtiles-alpha_30: 1751085665
+      fgtiles-alpha_31: -1474130992
+      fgtiles-alpha_32: 1933728917
+      fgtiles-alpha_33: 169212215
+      fgtiles-alpha_34: -759223073
+      fgtiles-alpha_35: 1464402120
+      fgtiles-alpha_36: 1089317194
+      fgtiles-alpha_37: 1361239839
+      fgtiles-alpha_38: -1916213970
+      fgtiles-alpha_39: 767728303
+      fgtiles-alpha_4: -1301504143
+      fgtiles-alpha_40: 1793333194
+      fgtiles-alpha_41: 455263911
+      fgtiles-alpha_42: 837048545
+      fgtiles-alpha_5: -1925253907
+      fgtiles-alpha_6: 1769357084
+      fgtiles-alpha_7: 523624774
+      fgtiles-alpha_8: -1804803333
+      fgtiles-alpha_9: 1462055482
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

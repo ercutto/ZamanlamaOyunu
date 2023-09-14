@@ -183,12 +183,12 @@ public class GameBoard : MonoBehaviour
             int rand = Random.Range(0, wrongSpritesList.Count);
 
             if (buttons[x].GetComponent<PieceControll>().type==1) {
-                buttons[x].GetComponent<SpriteRenderer>().sprite = correctSprite;
+                buttons[x].transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = correctSprite;
 
             }
             else
             {
-                buttons[x].GetComponent<SpriteRenderer>().sprite = wrongSpritesList[rand];
+                buttons[x].transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = wrongSpritesList[rand];
             }
 
             yield return new WaitForSeconds(0.01f);
@@ -265,16 +265,16 @@ public class GameBoard : MonoBehaviour
         {
            
             if (wrongbuttonsList[i].GetComponent<PieceControll>().type == 1) { 
-                wrongbuttonsList[i].GetComponent<SpriteRenderer>().color = Color.green;
+                wrongbuttonsList[i].transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.green;
                 }
             else
             {
-                wrongbuttonsList[i].GetComponent<SpriteRenderer>().color = _color;
+                wrongbuttonsList[i].transform.GetChild(0).GetComponent<SpriteRenderer>().color = _color;
             }
             
             
             yield return new WaitForSeconds(0.01f);
-            wrongbuttonsList[i].GetComponent<SpriteRenderer>().color = Color.white;
+            wrongbuttonsList[i].transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
         }
         colorOrAnimActionComplated = true;
 
