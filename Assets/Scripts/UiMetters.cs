@@ -63,7 +63,7 @@ public class UiMetters : MonoBehaviour
                     if (distance >= 0.1f)
                     {
 
-                        CountDownSlider.value = Mathf.Lerp(CountDownSlider.value, CorrectCountSlider.value, 0.005f);
+                        CountDownSlider.value = Mathf.Lerp(CountDownSlider.value, CorrectCountSlider.value, 0.01f);
 
                     }
                     else if (distance <= 0.1f)
@@ -85,7 +85,7 @@ public class UiMetters : MonoBehaviour
 
     IEnumerator CallAddScore()
     {
-        AddScore(-5f);
+        AddScore(-1f);
         scoreDecreesed = true;
 
         yield return new WaitForSeconds(2);
@@ -95,15 +95,16 @@ public class UiMetters : MonoBehaviour
     void Calculatescore()
     {
         changeApplied = false;
-        float difference = CountDownSlider.value - CorrectCountSlider.value;
+        //float difference = CountDownSlider.value - CorrectCountSlider.value;
 
-        float total =CorrectCountSlider.value += difference;
+        float total =CorrectCountSlider.value += 1f/*difference*/;
         if (total >= 98f)
         {
             CorrectCountSlider.value = 100f;
             Win = true;
             _timingGameManager.RestartGame();
         }
+
         CountDownSlider.value = CorrectCountSlider.value + 10f;
         changeApplied = true;
     }

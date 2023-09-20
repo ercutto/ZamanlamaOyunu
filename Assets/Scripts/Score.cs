@@ -75,48 +75,6 @@ public class Score : MonoBehaviour
         if (_score == 40 && _xDim* _yDim != 16) { gameBoard.StartGame(_xDim + 1, _yDim); }
 
 
-
-
-
-
-
-
-
-
-
-
-
-        //_score += addScore;
-
-
-        //scoreText.text = _score.ToString();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //if (_score==4) {gameBoard.StartGame(_xDim + addScore, _yDim); }
-        //else if (_score ==8) { gameBoard.StartGame(_xDim, _yDim + addScore); }
-        //else if (_score ==12) { gameBoard.StartGame(_xDim, _yDim + addScore); }
-        //else if (_score ==16) { gameBoard.StartGame(_xDim, _yDim + addScore); }
-
-
-
     }
 
 
